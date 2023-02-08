@@ -1,0 +1,290 @@
+@use "./variables" as var;
+@use "./mixings";
+@use "./_layout";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  font-family: Tahoma, sans-serif, "Times New Roman", Times, arial, serif;
+  color: white;
+  background-color:black;
+  
+
+
+}
+
+.main {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hwb(0 6% 93% / 0.767);
+  border: solid whitesmoke 1px;
+  width: 70vw;
+  height: 35vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  align-items: center;
+  justify-content: center;
+
+  @include mixings.tablet {
+    height: 40vh;  
+   }
+
+  @include mixings.laptop {
+  height: 40vh;  
+  width: 55vw; }
+
+
+  &__bg{
+display: block;
+width: 100vw;
+height: 100vh;
+min-height: 100vh;
+
+
+    &__img{
+
+display: block;
+height: 100%;
+width: 100%;
+min-height: inherit;
+filter: brightness(0.5);
+image-rendering: pixelated;
+
+    }
+  }
+  &__title {
+
+    font-style: oblique;
+
+    @include mixings.tablet {
+     font-size: 2.5rem;
+    }
+
+    @include mixings.laptop {
+      margin-top: 1rem;     
+    }
+
+    
+
+  }
+
+  &__form {
+    text-align: center;
+
+    @include mixings.tablet {
+      margin-top: 1rem;
+      font-size: 1.7rem;
+    }
+    @include mixings.desktop {
+    
+      padding: 1.7rem;
+    }
+   
+
+
+
+    &__text::placeholder{
+      font-size: 14px;
+
+      @include mixings.tablet {
+        font-size: 18px;
+       }
+
+       @include mixings.laptop {
+        font-size: 22px;
+       }
+
+       @include mixings.desktop {
+    
+      
+    font-size: 24px;      }
+    
+    }
+
+    &__text {
+      display: block;
+      padding: 0.4rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      width: 155px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid white;
+      color: white;
+      background-color: hwb(0 6% 93% / 0.89);
+      
+      @include mixings.tablet {
+        width: 300px;  
+      }
+
+      @include mixings.desktop {
+      width: 350px;      }
+
+
+    }
+
+    &__button-wrapper{
+      @include mixings.tablet {
+        }    }
+
+    &__remove-btn {
+      margin-left: 10px;
+      background: transparent;
+      border: none;
+      color: white;
+      @include mixings.tablet {
+        margin-top: 1rem;
+      } 
+      @include mixings.laptop {
+      margin-bottom: 1rem;      }
+    }
+
+    &__search-btn {
+      background: transparent;
+      border: none;
+      color: white;
+
+      @include mixings.tablet {
+        margin-top: 1rem;
+
+      } 
+      @include mixings.laptop {
+     
+      margin-bottom: 1rem;      }
+    }
+  }
+}
+
+
+ .search-result {
+  background-color: black;
+  //background-color:#0d0d0d;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 2rem;
+
+  @include mixings.tablet {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+
+  &__wrapper{
+    margin: 2vh auto;
+    border: solid white 4px;
+    background-color: #000;
+    }
+
+    &__movie-poster{
+    max-height: 80vh;
+    min-height: 60vh;
+    width: 80vw;
+    min-width: 80vw;
+
+
+    @include mixings.tablet {
+      max-height: 60vh;
+    min-height: 60vh;
+    width: 45vw;
+    min-width: 45vw;
+    
+    }
+  
+    @include mixings.laptop {
+      max-height: 80vh;
+    min-height: 80vh;
+    width: 45vw;
+    min-width: 4vw;
+    margin: 1rem;
+    
+    }
+    
+    &__img{
+      height: 100%;
+      width: 100%;
+      min-height: inherit;
+
+
+      @include mixings.laptop {
+        min-height: 100%;
+        min-width:100%;
+        max-height:inherit;
+
+      }
+
+      @include mixings.desktop {
+        min-height: 100%;
+        min-width:100%;
+        max-height: inherit;
+
+      }
+    }
+
+
+
+      } 
+
+      &__movie-title{
+  
+      display: none;
+    } 
+
+
+      &__button-wrapper{
+      display: flex;
+      justify-content: space-around;
+      width: 100vw;
+      margin: 2vh;
+      }
+
+      &__previous-btn{
+        background-color: transparent;
+        color:whitesmoke;
+        border: solid white 1px;  border-radius: 7px;
+        padding: 0.4rem;
+
+
+      }
+      &__next-btn{
+
+        background-color: transparent;
+        color:whitesmoke;
+        border: solid white 1px;  border-radius: 7px;
+        padding: 0.4rem;
+      
+      }
+
+      &__next-btn::after{
+        content: " →"; 
+        color: white;
+        
+        @include mixings.desktop {
+          font-size: 2rem;
+        }
+      }
+
+      &__previous-btn::after{
+        content: "←";
+        color: white;
+
+        @include mixings.desktop {
+          font-size: 2rem;
+        }
+      }
+
+
+
+      }
